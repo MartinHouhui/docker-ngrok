@@ -19,9 +19,6 @@ cp -r rootCA.pem /ngrok/assets/client/tls/ngrokroot.crt
 cp -r server.crt /ngrok/assets/server/tls/snakeoil.crt
 cp -r server.key /ngrok/assets/server/tls/snakeoil.key
 
-vim /usr/local/ngrok/src/ngrok/log/logger.go
-log "github.com/keepeye/log4go"
-
 cd /ngrok
 make release-server
 GOOS=linux GOARCH=386 make release-client
