@@ -20,7 +20,7 @@ cp -r server.crt /ngrok/assets/server/tls/snakeoil.crt
 cp -r server.key /ngrok/assets/server/tls/snakeoil.key
 
 cd /ngrok
-make release-server
+GOOS=linux GOARCH=amd64 make release-server 
 GOOS=linux GOARCH=386 make release-client
 GOOS=linux GOARCH=amd64 make release-client
 GOOS=windows GOARCH=386 make release-client
