@@ -7,7 +7,7 @@ if [ "${DOMAIN}" == "**None**" ]; then
 fi
 
 cd ${MY_FILES}
-if [ ! -f "${MY_FILES}/base.pem" ]; then
+if [ ! -f "${MY_FILES}/rootCA.pem" ]; then
     openssl genrsa -out rootCA.key 2048
     openssl req -x509 -new -nodes -key rootCA.key -subj "/CN=$NGROK_DOMAIN" -days 5000 -out rootCA.pem
     openssl genrsa -out server.key 2048
