@@ -1,17 +1,23 @@
-FROM golang:1.7.1-alpine
-MAINTAINER hteen <i@hteen.cn>
+FROM ubuntu:latest
 
-RUN apk add --no-cache git make openssl
+# gcc for cgo
+RUN  add-apt-repository ppa:longsleep/golang-backports &&\
+     apt-get update &&\
+     apt-get install golang-go &&\
+     apt-get install git 
 
-RUN git clone https://github.com/inconshreveable/ngrok.git /ngrok
+RUN cd /usr/local && git clone https://github.com/inconshreveable/ngrok.git
+
+ENV GOPATH /usr/local/ngrok/Ï
 
 ADD *.sh /
 
 ENV DOMAIN **None**
-ENV MY_FILES /myfiles
 ENV TUNNEL_ADDR :4443
 ENV HTTP_ADDR :80
 ENV HTTPS_ADDR :443
+
+VOLUME ["/release"]
 
 EXPOSE 4443
 EXPOSE 80
