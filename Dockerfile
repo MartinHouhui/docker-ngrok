@@ -6,9 +6,9 @@ RUN  add-apt-repository ppa:longsleep/golang-backports &&\
      apt-get install golang-go &&\
      apt-get install git 
 
-RUN cd /usr/local && git clone https://github.com/inconshreveable/ngrok.git
+RUN cd /usr/local && git clone https://github.com/MartinHouhui/ngrok.git
 
-ENV GOPATH /usr/local/ngrok/Ï
+ENV GOPATH /usr/local/ngrok/
 
 ADD *.sh /
 
