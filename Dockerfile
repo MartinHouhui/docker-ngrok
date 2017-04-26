@@ -2,8 +2,11 @@ FROM ubuntu:latest
 
 # gcc for cgo
 RUN  apt-get update &&\
-     apt-get install golang-go &&\
-     apt-get install git 
+     apt-get dist-upgrade -y &&\
+     add-apt-repository ppa:longsleep/golang-backports &&\
+     apt-get install  -y --no-install-recommends \
+     golang-go \
+     git 
 
 RUN cd /usr/local && git clone https://github.com/MartinHouhui/ngrok.git
 
