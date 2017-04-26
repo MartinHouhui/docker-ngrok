@@ -1,10 +1,6 @@
 FROM ubuntu:latest
 
-
-RUN  apt-get install -y software-properties-common
-
 RUN  apt-get update &&\
-     add-apt-repository ppa:longsleep/golang-backports &&\
      apt-get install  -y --no-install-recommends \
      golang-go \
      git 
