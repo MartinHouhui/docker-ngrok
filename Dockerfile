@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 RUN  apt-get update &&\
      apt-get install  -y \
+     openssl \
      golang-go \
      git \
      git-core
