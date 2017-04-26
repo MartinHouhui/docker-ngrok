@@ -15,11 +15,9 @@ if [ ! -f "${MY_FILES}/base.pem" ]; then
     openssl x509 -req -in device.csr -CA base.pem -CAkey base.key -CAcreateserial -days 10000 -out device.crt
 fi
 cp -r base.pem /ngrok/assets/client/tls/ngrokroot.crt
-cp -r device.crt /ngrok/assets/server/tls/snakeoil.crt
-cp -r device.key /ngrok/assets/server/tls/snakeoil.key  
 
 cd /ngrok &&\
-    GOOS=linux GOARCH=amd64 make release-server  &&\
+    make release-server  &&\
     GOOS=darwin GOARCH=amd64 make release-client  
 
 cp -r /ngrok/bin ${MY_FILES}/bin
