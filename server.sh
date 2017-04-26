@@ -7,7 +7,7 @@ if [ "${DOMAIN}" == "**None**" ]; then
 fi
 
 echo "ngrokd is not build,will be build it now..."
-/bin/sh /build.sh
+/build.sh
 
 
 /usr/local/ngrok/bin/ngrokd  -domain="${DOMAIN}" -httpAddr=${HTTP_ADDR} 
