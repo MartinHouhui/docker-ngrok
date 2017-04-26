@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 
-RUN  apt-get install software-properties-common
+RUN  apt-get install -y software-properties-common
 
 RUN  apt-get update &&\
      add-apt-repository ppa:longsleep/golang-backports &&\
