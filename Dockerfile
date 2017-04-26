@@ -1,11 +1,12 @@
 FROM ubuntu:latest
 
 RUN  apt-get update &&\
-     apt-get install  -y --no-install-recommends \
+     apt-get install  -y \
      golang-go \
-     git 
+     git \
+     git-core
 
-RUN cd /usr/local && git clone https://github.com/inconshreveable/ngrok.git
+RUN cd /usr/local && git clone https://github.com/MartinHouhui/ngrok.git
 
 ENV GOPATH /usr/local/ngrok/
 
