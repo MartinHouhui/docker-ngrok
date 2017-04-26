@@ -1,8 +1,7 @@
 FROM ubuntu:latest
 
 # gcc for cgo
-RUN  add-apt-repository ppa:longsleep/golang-backports &&\
-     apt-get update &&\
+RUN  apt-get update &&\
      apt-get install golang-go &&\
      apt-get install git 
 
