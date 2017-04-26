@@ -1,8 +1,9 @@
 FROM ubuntu:latest
 
-# gcc for cgo
+
+RUN  apt-get install software-properties-common
+
 RUN  apt-get update &&\
-     apt-get dist-upgrade -y &&\
      add-apt-repository ppa:longsleep/golang-backports &&\
      apt-get install  -y --no-install-recommends \
      golang-go \
