@@ -5,7 +5,7 @@ RUN  apt-get update &&\
      golang-go \
      git 
 
-RUN cd /usr/local && git clone https://github.com/MartinHouhui/ngrok.git
+RUN cd /usr/local && git clone https://github.com/inconshreveable/ngrok.git
 
 ENV GOPATH /usr/local/ngrok/
 
